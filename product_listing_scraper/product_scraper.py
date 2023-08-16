@@ -28,8 +28,6 @@ conid_pattern = re.compile(r"<tr>\s*<td>([A-Z\s]+)<\/td>\s*<td><a.*conid=(\d+).*
 instruments = conid_pattern.findall(p1_content)
 print(f"Page 1, found {len(instruments)} instruments: {instruments[0][0]} through {instruments[-1][0]}")
 
-max_page=2
-
 for page in range(2, max_page+1):
     time.sleep(1)
     print(f"Requesting page {page} of {max_page}...")
